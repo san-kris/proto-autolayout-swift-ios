@@ -74,19 +74,8 @@ class ViewController: UIViewController {
         
         setupImageViewLayout()
         setupDescTextViewLayout()
+        setupBottomControlStackViewLayout()
         // setupPreviousButtonLayout()
-        
-        // setting up stackview at the bottom to arrange buttons and pageview controller
-        let bottomControlStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
-        bottomControlStackView.distribution = UIStackView.Distribution.fillEqually
-        bottomControlStackView.axis = NSLayoutConstraint.Axis.horizontal
-        view.addSubview(bottomControlStackView)
-        
-        bottomControlStackView.translatesAutoresizingMaskIntoConstraints = false
-        bottomControlStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        bottomControlStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        bottomControlStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        bottomControlStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     fileprivate func setupImageViewLayout() {
@@ -121,6 +110,19 @@ class ViewController: UIViewController {
         previousButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
 
-
+    fileprivate func setupBottomControlStackViewLayout() {
+        
+        // setting up stackview at the bottom to arrange buttons and pageview controller
+        let bottomControlStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+        bottomControlStackView.distribution = UIStackView.Distribution.fillEqually
+        bottomControlStackView.axis = NSLayoutConstraint.Axis.horizontal
+        view.addSubview(bottomControlStackView)
+        
+        bottomControlStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomControlStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        bottomControlStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        bottomControlStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        bottomControlStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
 }
 

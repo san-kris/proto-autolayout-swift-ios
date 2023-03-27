@@ -13,6 +13,8 @@
 		AA36332529D1B335004E01C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA36332329D1B335004E01C5 /* Main.storyboard */; };
 		AA36332729D1B337004E01C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA36332629D1B337004E01C5 /* Assets.xcassets */; };
 		AA36332A29D1B337004E01C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA36332829D1B337004E01C5 /* LaunchScreen.storyboard */; };
+		AA36333229D1F268004E01C5 /* SwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36333129D1F268004E01C5 /* SwipeController.swift */; };
+		AA36333429D20034004E01C5 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36333329D20034004E01C5 /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		AA36332629D1B337004E01C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA36332929D1B337004E01C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA36332B29D1B337004E01C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA36333129D1F268004E01C5 /* SwipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeController.swift; sourceTree = "<group>"; };
+		AA36333329D20034004E01C5 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				AA36332629D1B337004E01C5 /* Assets.xcassets */,
 				AA36332829D1B337004E01C5 /* LaunchScreen.storyboard */,
 				AA36332B29D1B337004E01C5 /* Info.plist */,
+				AA36333129D1F268004E01C5 /* SwipeController.swift */,
+				AA36333329D20034004E01C5 /* PageCell.swift */,
 			);
 			path = "proto-autolayout-swift-ios";
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA36333229D1F268004E01C5 /* SwipeController.swift in Sources */,
+				AA36333429D20034004E01C5 /* PageCell.swift in Sources */,
 				AA36332229D1B335004E01C5 /* ViewController.swift in Sources */,
 				AA36331E29D1B335004E01C5 /* AppDelegate.swift in Sources */,
 				AA36332029D1B335004E01C5 /* SceneDelegate.swift in Sources */,
