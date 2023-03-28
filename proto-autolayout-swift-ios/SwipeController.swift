@@ -11,7 +11,7 @@ class SwipeController: UICollectionViewController, UICollectionViewDelegateFlowL
     
     let cellID = "cellID"
     
-    let previousButton: UIButton = {
+    lazy var previousButton: UIButton = {
         let btn = UIButton(type: UIButton.ButtonType.system)
         // btn.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         // btn.backgroundColor = .red
@@ -30,7 +30,7 @@ class SwipeController: UICollectionViewController, UICollectionViewDelegateFlowL
         collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
     }
     
-    let nextButton: UIButton = {
+    lazy var nextButton: UIButton = {
         let btn = UIButton(type: UIButton.ButtonType.system)
         btn.setTitle("NEXT", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
@@ -83,6 +83,32 @@ class SwipeController: UICollectionViewController, UICollectionViewDelegateFlowL
         
         setupBottomControlStackViewLayout()
         
+    }
+    
+    // when devices transitions to different oorientation, this methd is called
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animate { (_) in
+            // the cells are not layedout correctly.
+            // we can invalidate the layout, which will trigger drawing new layout
+            self.collectionViewLayout.invalidateLayout()
+            
+            // If the first page is not center aligned( a bug ) you can set the contetn offset
+            if self.pageControl.currentPage == 0 {
+                self.collectionView.contentOffset = .zero
+            } else {
+                // get the index path of the current page
+                let indexPath = IndexPath(row: self.pageControl.currentPage, section: 0)
+                // changing orientation does not automatically center align the cell
+                // scroll to page with center alignment
+                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+
+            }
+            
+        } completion: { (_) in
+            print("animation completed")
+        }
+
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
